@@ -1,0 +1,41 @@
+@import "bootstrap.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+#cover {
+  background: #333 url('../img/Katz_Cats.jpg') center center no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  height: 100%;
+}
+
+#cover-caption {
+  width: 100%;
+}
+
+.section-heading {
+  text-align: center;
+}
+
+.section-full {
+  height: 100%;
+}
+
+.navbar-nav .nav-item+.nav-item {
+    margin-left: -1rem;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.nl-wrapper {
+  text-align: center;
+}
