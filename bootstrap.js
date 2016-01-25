@@ -1,3 +1,5 @@
+// modified to fix scrollspy event bug - JM //
+
 /*!
  * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -2424,7 +2426,7 @@ var ScrollSpy = (function ($) {
           // recursively add actives to tested nav-links
           $link.parents(Selector.LI).find(Selector.NAV_LINKS).addClass(ClassName.ACTIVE);
         }
-        console.log(this._element.tagName + this._scrollElement)
+        //console.log(this._element.tagName + this._scrollElement)
 
         $(this._element).trigger($.Event(Event.ACTIVATE), {
           relatedTarget: target
