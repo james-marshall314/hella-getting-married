@@ -3173,6 +3173,11 @@ body {
   background: url("../lightpaperfibers.png");
 }
 
+body:after {
+  display: none;
+  content: url("../Uber_logotype.svg") url("../Lyft_logo.svg");
+}
+
 section {
   margin-left: auto;
   margin-right: auto;
