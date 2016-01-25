@@ -111,7 +111,7 @@ $test-gradient: linear-gradient(45deg, rgba(orange, $trans), rgba(purple, $trans
 /* COVER */
 
 #cover {
-  background: #333 url('../img/TopangaCanyonCC.jpg') center center no-repeat;
+  background: #fff url('../img/TopangaCanyonCC.jpg') center center no-repeat;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -136,12 +136,12 @@ $test-gradient: linear-gradient(45deg, rgba(orange, $trans), rgba(purple, $trans
   }
 }
 
-
-
-
 /* CONTENT SECTIONS */
 $main-max: 50rem;
 $section-shadow: 1px 1px 3px rgba(black, .5);
+///background-color: rgba(white, .5);
+///box-shadow: $section-shadow;
+///border: 1px solid black;
 
 .sub-head {
   margin: 6rem auto 1rem;
@@ -151,11 +151,6 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 .aside {
   @include make-container();
   max-width: $main-max;
-  ///background-color: rgba(white, .5);
-  ///box-shadow: $section-shadow;
-
-  //border: 1px solid black;
-
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -166,14 +161,11 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 }
 
 
-// The Wedding //
+/***** The Wedding ********/
+
 .the-basics {
   @include make-container();
-  ///background-color: rgba(white, .5);
-  ///box-shadow: $section-shadow;
-
   border: 1px solid black;
-  
   max-width: $main-max;
   margin: 4rem auto 2rem;
   padding-top: 3rem;
@@ -213,12 +205,8 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 }
 
 .directions {
-  //background-color: rgba(pink, .25);
   @include make-container();
-  padding: 0;
-  ///background-color: rgba(white, .5);
-  ///box-shadow: $section-shadow;
-  
+  padding: 0;  
   max-width: $main-max;
   margin: 0 auto 2rem;
   padding-bottom: 1rem;
@@ -235,7 +223,6 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   }
   .details {
     border: 1px solid black;
-    //border-top: none;
     padding-top: 1rem;
   }
 }
@@ -244,11 +231,6 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   max-width: $main-max;
   min-height: 10rem;
   margin-bottom: 1rem;
-  //margin: auto;
-  //box-shadow: $section-shadow;
-
-  //border: 1px solid black;
-  
 }
 
 #from-pch,
@@ -267,13 +249,19 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   border: 1px solid black;
 }
 
+button.list-group-item {
+  @include hover-focus {
+    background-color: rgba(orange, .10);
+  }
+}
+
 .list-group-item {
   border-bottom: 1px solid black;
+  background: none;
 
   h4 {
     text-align: center;
     color: black;
-    //font-weight: bold;
     margin: 0;
   }
 }
@@ -281,13 +269,7 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 .lodging {
   @include make-container();
   padding: 0;
-  ///background-color: rgba(white, .5);
-  ///box-shadow: $section-shadow;
-
-  //border: 1px solid black;
-  
   max-width: $main-max;
-  //margin: 0 auto 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   p {
@@ -355,8 +337,6 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
       }
     }
     .hotel-info {
-      ///background-color: rgba(white, .5);
-      ///box-shadow: $section-shadow;
 
       border: 1px solid black;
       
@@ -395,16 +375,51 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 .transportation {
   @include make-container();
   max-width: $main-max;
-  ///background-color: rgba(white, .5);
-  ///box-shadow: $section-shadow;
-
-  border: 1px solid black;
-  
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   text-align: justify;
-  p {
+
+  .info {
+    padding-bottom: 1rem;
+  }
+
+  .car-service {
+    @include make-col(0);
+    @include make-col-span(6);
+    @media (max-width: 550px) {
+      @include make-col(0);
+    }
+  }
+
+  #lyft, #uber {
+    display: block;
+    height: 4rem;
+    width: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #lyft {
+    background-image: url("../Grey_Lyft_logo.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:active,
+    &:hover, 
+    &:focus {
+      background-image: url("../Lyft_logo.svg");
+    }
+  }
+  #uber {
+    background-image: url("../Grey_Uber_logotype.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:active, 
+    &:hover, 
+    &:focus {
+      background-image: url("../Uber_logotype.svg");
+    }
   }
 }
 
@@ -414,16 +429,19 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 .the-story {
   @include make-container();
   max-width: $main-max;
-  ///background-color: rgba(white, .5);
-  ///box-shadow: $section-shadow;
-
-  border: 1px solid black;
-  
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  text-align: justify;
+  h4, p {
+    @include make-col();
+  }
+  h4 {
+    @include make-col-span(12);
+    color: rgba(black, .25);
+  }
   p {
+    @include make-col-span(11);
+    @include make-col-offset(1);
   }
 }
 

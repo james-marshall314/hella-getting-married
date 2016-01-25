@@ -3124,24 +3124,19 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 
 .main-nav .nav-link {
-  color: rgba(0, 0, 0, 0.3);
+  color: #888;
 }
 
 .main-nav .nav-link:focus, .main-nav .nav-link:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.main-nav .open > .nav-link, .main-nav .open > .nav-link:focus, .main-nav .open > .nav-link:hover,
-.main-nav .active > .nav-link,
-.main-nav .active > .nav-link:focus,
-.main-nav .active > .nav-link:hover,
-.main-nav .nav-link.open,
-.main-nav .nav-link.open:focus,
-.main-nav .nav-link.open:hover,
-.main-nav .nav-link.active,
-.main-nav .nav-link.active:focus,
-.main-nav .nav-link.active:hover {
+.main-nav .nav-link.active, .main-nav .nav-link.active:focus, .main-nav .nav-link.active:hover {
   color: orange;
+}
+
+.main-nav .nav-link.active:focus, .main-nav .nav-link.active:hover {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* TYPE */
@@ -3193,7 +3188,7 @@ section::after {
 
 /* COVER */
 #cover {
-  background: #333 url("../img/TopangaCanyonCC.jpg") center center no-repeat;
+  background: #fff url("../img/TopangaCanyonCC.jpg") center center no-repeat;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -3239,6 +3234,7 @@ section::after {
   margin: 0;
 }
 
+/***** The Wedding ********/
 .the-basics {
   margin-left: auto;
   margin-right: auto;
@@ -3393,8 +3389,13 @@ section::after {
   border: 1px solid black;
 }
 
+button.list-group-item:focus, button.list-group-item:hover {
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
 .list-group-item {
   border-bottom: 1px solid black;
+  background: none;
 }
 
 .list-group-item h4 {
@@ -3611,7 +3612,6 @@ section::after {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   max-width: 50rem;
-  border: 1px solid black;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -3624,6 +3624,59 @@ section::after {
   clear: both;
 }
 
+.transportation .info {
+  padding-bottom: 1rem;
+}
+
+.transportation .car-service {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 50%;
+}
+
+@media (max-width: 550px) {
+  .transportation .car-service {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.transportation #lyft, .transportation #uber {
+  display: block;
+  height: 4rem;
+  width: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.transportation #lyft {
+  background-image: url("../Grey_Lyft_logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.transportation #lyft:active, .transportation #lyft:hover, .transportation #lyft:focus {
+  background-image: url("../Lyft_logo.svg");
+}
+
+.transportation #uber {
+  background-image: url("../Grey_Uber_logotype.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.transportation #uber:active, .transportation #uber:hover, .transportation #uber:focus {
+  background-image: url("../Uber_logotype.svg");
+}
+
 /*****    The Bride & Groom   *****/
 .the-story {
   margin-left: auto;
@@ -3631,17 +3684,33 @@ section::after {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   max-width: 50rem;
-  border: 1px solid black;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  text-align: justify;
 }
 
 .the-story::after {
   content: "";
   display: table;
   clear: both;
+}
+
+.the-story h4, .the-story p {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+
+.the-story h4 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.the-story p {
+  width: 91.666667%;
+  margin-left: 8.333333%;
 }
 
 #rsvp-block {

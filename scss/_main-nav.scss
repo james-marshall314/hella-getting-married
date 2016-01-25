@@ -41,20 +41,19 @@
     margin-left: 1rem;
   }
   .nav-link {
-      color: $navbar-light-color;
+      color: #888;
 
       @include hover-focus {
         color: $navbar-light-hover-color;
       }
     }
 
-  .open > .nav-link,
-  .active > .nav-link,
-  .nav-link.open,
   .nav-link.active {
     @include plain-hover-focus {
-      // color: $navbar-light-active-color;
       color: orange;
     }
+    @include hover-focus {
+        color: $navbar-light-hover-color;
+      }
   }
 }

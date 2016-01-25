@@ -2,13 +2,15 @@ var  mn = $(".main-nav");
     mns = "main-nav-scrolled";
     hdr = $("header").height();
 
-$(window).scroll(function() {
-  if( $(this).scrollTop() > $("header").height()) {
-    //mn.addClass(mns);
-  } else {
-    //mn.removeClass(mns);
-  }
-});
+$.fn.scrollEnd = function(callback, timeout) {          
+  $(this).scroll(function(){
+    var $this = $(this);
+    if ($this.data('scrollTimeout')) {
+      clearTimeout($this.data('scrollTimeout'));
+    }
+    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  });
+};
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -24,27 +26,11 @@ $(function() {
 //highlight nav links when scrolled to section
 $('body').scrollspy({ target: '.top-nav' });
 
-$('')
-
-
-// $("").click(function(){
-//     alert("The paragraph was clicked.");
-// });
-
-$('a').on("click active", function(){
-  //$("p").addClass('test');
-  //alert("hey hey")
-});
 
 //clear button focus
-$('button').mouseup(function() { this.blur() });
+$('button, a.nav-link.active, #uber, #lyft').mouseup(function() { this.blur() });
+$('body').on("activate.bs.scrollspy", function(){ $('a').blur() });
 
-$('body').on("activate.bs.scrollspy", function(event){
-        // var x = $(".nav li.active > a").text();
-        // $("#demo").empty().html("You are currently viewing: " + x);
-  //$("p").addClass('test');
-  console.log(event.relatedTarget, event.target);
-});
 
 // Google Maps //
 var layer = "watercolor";
@@ -66,59 +52,18 @@ function map() {
     map: map,
     title: 'Hello World!'
   });
-  
-  // map = new google.maps.Map(document.getElementById('map2'), {
-  //   center: {lat: -34.397, lng: 150.644},
-  //   zoom: 8,
-  //   mapTypeId: google.maps.MapTypeId.HYBRID
-  // });
-  // map = new google.maps.Map(document.getElementById('map3'), {
-  //   center: {lat: -34.397, lng: 150.644},
-  //   zoom: 8,
-  //   mapTypeId: google.maps.MapTypeId.HYBRID
-  // });
-}
-
-
-
-
-
-
-
-
-// Post form content to Google Forms
-function postContactToGoogle() {
-  var first = $('#First').val();
-  var last = $('#Last').val();
-
-  $.ajax({
-    url: "https://docs.google.com/forms/d/1cZfgyAcljlKFfge-oujCsDxxl9Ed6KjX8ISjWrmE3_o/formResponse?",
-    data: { 
-      "entry.1726430803": first, 
-      "entry.753165449": last 
-    },
-    type: "POST",
-    //contentType: "text/plain",
-    //dataType: "text/plain",
-    accepts: "text/plain",
-
-    statusCode: {
-      0: function () {
-        //window.location.replace("ThankYou.html");
-        alert("Thanks!");
-        $('h1').text('Hi ' + "shithead" + "!");
-      },
-      200: function () {
-        //window.location.replace("ThankYou.html");
-        //alert("Thanks!");
-        $('h1').text('Hi ' + first + "!");
-        $('input-form').reset();
-      }
-    }
+  $(window).scroll(function() {
+    map.setOptions({ scrollwheel: false });
   });
+
+  $(window).scrollEnd(function(){
+      map.setOptions({ scrollwheel: true });
+  }, 500);
 }
 
-map();
+
+
+
 
 
 
