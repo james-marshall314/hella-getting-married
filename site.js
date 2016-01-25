@@ -26,11 +26,9 @@ $(function() {
 //highlight nav links when scrolled to section
 $('body').scrollspy({ target: '.top-nav' });
 
-
 //clear button focus
 $('button, a.nav-link.active, #uber, #lyft').mouseup(function() { this.blur() });
 $('body').on("activate.bs.scrollspy", function(){ $('a').blur() });
-
 
 // Google Maps //
 var layer = "watercolor";
@@ -60,9 +58,6 @@ function map() {
       map.setOptions({ scrollwheel: true });
   }, 500);
 }
-
-
-
 
 
 

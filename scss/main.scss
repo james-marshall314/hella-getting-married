@@ -87,6 +87,10 @@ h4 {
 body {
   background: url('../lightpaperfibers.png') ; //fixed
 }
+body:after{
+ display:none;
+ content: url("../Uber_logotype.svg") url("../Lyft_logo.svg");
+}
 
 #main {
   
