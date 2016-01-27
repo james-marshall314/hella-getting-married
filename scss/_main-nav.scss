@@ -1,7 +1,8 @@
 .main-nav {
   background: #fff;
-  background-color: rgba(white, .75);
+  //background-color: rgba(white, .75);
   box-shadow: 1px 1px 3px rgba(black, .5);
+  //box-shadow: 1px 1px 3px $gray-dark;
   padding: 1rem 1rem;
   width: 100%;
   @include clearfix
@@ -40,20 +41,28 @@
   .nav-item + .nav-item {
     margin-left: 1rem;
   }
+
   .nav-link {
-      color: #888;
+    color: #888;
 
-      @include hover-focus {
-        color: $navbar-light-hover-color;
-      }
+    @include hover-focus {
+      color: darkorange;
+      // color: $navbar-light-hover-color;
     }
-
+    &.active,
+    &:active, {
+      color: darkorange;
+    }
+  }
+  
   .nav-link.active {
+    color: darkorange;
     @include plain-hover-focus {
-      color: orange;
+      color: darkorange;
     }
     @include hover-focus {
-        color: $navbar-light-hover-color;
+      color: darkorange;
+      //color: $navbar-light-hover-color;
     }
   }
 }

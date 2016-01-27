@@ -3086,7 +3086,6 @@ a.bg-danger:focus, a.bg-danger:hover {
  */
 .main-nav {
   background: #fff;
-  background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   padding: 1rem 1rem;
   width: 100%;
@@ -3140,15 +3139,23 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 
 .main-nav .nav-link:focus, .main-nav .nav-link:hover {
-  color: rgba(0, 0, 0, 0.6);
+  color: darkorange;
+}
+
+.main-nav .nav-link.active, .main-nav .nav-link:active {
+  color: darkorange;
+}
+
+.main-nav .nav-link.active {
+  color: darkorange;
 }
 
 .main-nav .nav-link.active, .main-nav .nav-link.active:focus, .main-nav .nav-link.active:hover {
-  color: orange;
+  color: darkorange;
 }
 
 .main-nav .nav-link.active:focus, .main-nav .nav-link.active:hover {
-  color: rgba(0, 0, 0, 0.6);
+  color: darkorange;
 }
 
 /* TYPE */
@@ -3170,12 +3177,16 @@ h4 {
 
 /* BODY STYLES*/
 body {
-  background: url("../lightpaperfibers.png");
+  background: url("../img/lightpaperfibers.png") fixed;
+}
+
+body p {
+  font-family: "Raleway", "Hind", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body:after {
   display: none;
-  content: url("../Uber_logotype.svg") url("../Lyft_logo.svg");
+  content: url("../logos/Uber_logotype.svg") url("../logos/Lyft_logo.svg") url("../logos/CrateandBarrelLogo.svg") url("../logos/Macys.svg");
 }
 
 section {
@@ -3207,6 +3218,7 @@ section::after {
 #cover {
   background: #fff url("../img/TopangaCanyonCC.jpg") center center no-repeat;
   background-size: cover;
+  box-shadow: 0px 4px 3px -3px rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;
   display: flex;
@@ -3227,6 +3239,10 @@ section::after {
 .sub-head {
   margin: 6rem auto 1rem;
   max-width: 50rem;
+}
+
+.sub-head-center {
+  text-align: center;
 }
 
 .aside {
@@ -3252,12 +3268,30 @@ section::after {
 }
 
 /***** The Wedding ********/
+#the-wedding {
+  padding-bottom: 10rem;
+}
+
+.basics-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  max-width: 50rem;
+}
+
+.basics-wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .the-basics {
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  border: 1px solid black;
+  border: 2px solid #373a3c;
   max-width: 50rem;
   margin: 4rem auto 2rem;
   padding-top: 3rem;
@@ -3276,24 +3310,18 @@ section::after {
   min-height: 1px;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-}
-
-.the-basics h4 {
-  width: 33.333333%;
-  text-align: right;
-}
-
-.the-basics p {
-  width: 66.666667%;
+  width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 390px) {
   .the-basics h4 {
-    text-align: left;
+    width: 100%;
+    text-align: center;
   }
   .the-basics p {
-    width: 83.333333%;
-    margin-left: 16.666667%;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -3303,8 +3331,8 @@ section::after {
 }
 
 .info {
-  margin-left: -0.9375rem;
-  margin-right: -0.9375rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 
 .info::after {
@@ -3335,17 +3363,7 @@ section::after {
 }
 
 .directions p {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
   text-align: justify;
-}
-
-.directions p::after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .directions button:focus {
@@ -3354,21 +3372,20 @@ section::after {
 
 .directions .info {
   margin-top: 1.5rem;
+}
+
+.directions .details {
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
+  padding-top: 1rem;
 }
 
-.directions .info::after {
+.directions .details::after {
   content: "";
   display: table;
   clear: both;
-}
-
-.directions .details {
-  border: 1px solid black;
-  padding-top: 1rem;
 }
 
 #map1 {
@@ -3390,9 +3407,9 @@ section::after {
   position: relative;
   float: left;
   min-height: 1px;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
-  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 50%;
   margin-bottom: 1rem;
 }
 
@@ -3402,23 +3419,49 @@ section::after {
   clear: both;
 }
 
-.list-group {
-  border: 1px solid black;
+@media (max-width: 550px) {
+  .direction-card {
+    width: 100%;
+  }
 }
 
-button.list-group-item:focus, button.list-group-item:hover {
-  background-color: rgba(255, 165, 0, 0.1);
+.list-group {
+  border: 2px solid #373a3c;
 }
 
 .list-group-item {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #373a3c;
   background: none;
 }
 
 .list-group-item h4 {
   text-align: center;
-  color: black;
+  color: #373a3c;
   margin: 0;
+}
+
+.list-group-item:focus h4, .list-group-item:hover h4 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+button.list-group-item {
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, transparent 50%, #373a3c 50%);
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease;
+}
+
+button.list-group-item:focus, button.list-group-item:hover {
+  color: white;
+  background-color: #373a3c;
+  background-position: -100% 100%;
+}
+
+button.list-group-item:focus .list-group-item, button.list-group-item:hover .list-group-item {
+  color: #fff;
+}
+
+button.list-group-item:focus .list-group-item h4, button.list-group-item:hover .list-group-item h4 {
+  color: #fff;
 }
 
 .lodging {
@@ -3476,7 +3519,6 @@ button.list-group-item:focus, button.list-group-item:hover {
   margin-right: auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  padding: 0;
   max-width: 50rem;
   margin: 0 auto 2rem;
   padding-top: 1rem;
@@ -3494,7 +3536,7 @@ button.list-group-item:focus, button.list-group-item:hover {
   margin-right: auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 0;
 }
 
@@ -3522,20 +3564,12 @@ button.list-group-item:focus, button.list-group-item:hover {
   outline: none;
 }
 
-.hotel-wrapper .info {
-  margin-top: 1.5rem;
+.hotel-wrapper .stars {
+  font-weight: bold;
 }
 
-@media (max-width: 562px) {
-  .hotel-wrapper .info {
-    margin-left: -0.234375rem;
-    margin-right: -0.234375rem;
-  }
-  .hotel-wrapper .info::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.hotel-wrapper .info {
+  margin-top: 1.5rem;
 }
 
 @media (max-width: 374px) {
@@ -3559,19 +3593,14 @@ button.list-group-item:focus, button.list-group-item:hover {
   width: 33.333333%;
 }
 
-@media (max-width: 562px) {
+@media (max-width: 663px) {
   .hotel-wrapper .info .hotel {
-    position: relative;
-    float: left;
-    min-height: 1px;
-    padding-left: 0.46875rem;
-    padding-right: 0.46875rem;
     width: 50%;
     margin-top: 1.5rem;
   }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 402px) {
   .hotel-wrapper .info .hotel {
     position: relative;
     float: left;
@@ -3584,28 +3613,13 @@ button.list-group-item:focus, button.list-group-item:hover {
 }
 
 .hotel-wrapper .info .hotel-info {
-  border: 1px solid black;
+  border: 2px solid #373a3c;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
 .hotel-wrapper .info .hotel-info h5 {
-  text-align: left;
-}
-
-@media (max-width: 709px) {
-  .hotel-wrapper .info .hotel-info {
-    min-height: 12rem;
-  }
-  .hotel-wrapper .info .hotel-info p {
-    text-align: left;
-  }
-}
-
-@media (max-width: 374px) {
-  .hotel-wrapper .info .hotel-info {
-    min-height: 0;
-  }
+  text-align: justify;
 }
 
 @media (max-width: 374px) {
@@ -3616,7 +3630,8 @@ button.list-group-item:focus, button.list-group-item:hover {
 
 .media img {
   height: auto;
-  width: 6rem;
+  width: 3.5rem;
+  padding-top: 0;
 }
 
 .media-body {
@@ -3632,7 +3647,6 @@ button.list-group-item:focus, button.list-group-item:hover {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  text-align: justify;
 }
 
 .transportation::after {
@@ -3643,6 +3657,15 @@ button.list-group-item:focus, button.list-group-item:hover {
 
 .transportation .info {
   padding-bottom: 1rem;
+  padding-top: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.transportation .info::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .transportation .car-service {
@@ -3656,52 +3679,107 @@ button.list-group-item:focus, button.list-group-item:hover {
 
 @media (max-width: 550px) {
   .transportation .car-service {
-    position: relative;
-    float: left;
-    min-height: 1px;
-    padding-left: 0;
-    padding-right: 0;
+    width: 100%;
+  }
+  .transportation .car-service #uber {
+    margin-top: 3rem;
   }
 }
 
 .transportation #lyft, .transportation #uber {
   display: block;
   height: 4rem;
-  width: 8rem;
+  width: 10rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .transportation #lyft {
-  background-image: url("../Grey_Lyft_logo.svg");
+  background-image: url("../logos/Grey_Lyft_logo.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .transportation #lyft:active, .transportation #lyft:hover, .transportation #lyft:focus {
-  background-image: url("../Lyft_logo.svg");
+  background-image: url("../logos/Lyft_logo.svg");
 }
 
 .transportation #uber {
-  background-image: url("../Grey_Uber_logotype.svg");
+  background-image: url("../logos/Grey_Uber_logotype.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .transportation #uber:active, .transportation #uber:hover, .transportation #uber:focus {
-  background-image: url("../Uber_logotype.svg");
+  background-image: url("../logos/Uber_logotype.svg");
+}
+
+.the-weekend {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  max-width: 50rem;
+  border: 2px solid #373a3c;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.the-weekend::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.the-weekend p {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  padding-right: 0;
+}
+
+.the-weekend p::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /*****    The Bride & Groom   *****/
+#the-couple {
+  background-color: #fff;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+#the-couple h1 {
+  margin-bottom: 3rem;
+}
+
+#the-couple .wrapper {
+  margin: 0 auto -4rem;
+  max-width: 26rem;
+}
+
+#cat-people {
+  display: block;
+  height: auto;
+  width: 100%;
+  border: .33rem solid #373a3c;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .the-story {
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   max-width: 50rem;
-  margin-top: 1rem;
+  margin-top: -1rem;
   margin-bottom: 1rem;
   padding: 1rem;
 }
@@ -3712,55 +3790,157 @@ button.list-group-item:focus, button.list-group-item:hover {
   clear: both;
 }
 
-.the-story h4, .the-story p {
-  position: relative;
-  float: left;
-  min-height: 1px;
+.the-story p {
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
 }
 
+.the-story p::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .the-story h4 {
-  width: 100%;
   color: rgba(0, 0, 0, 0.25);
 }
 
-.the-story p {
-  width: 91.666667%;
-  margin-left: 8.333333%;
+.registry {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  max-width: 50rem;
+  margin-top: 3rem;
+  margin-bottom: 16rem;
+  padding: 0;
 }
 
-#rsvp-block {
+.registry::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.registry .registry-items {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.registry .registry-items::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.registry .registry-items .registry-item {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 50%;
+}
+
+@media (max-width: 550px) {
+  .registry .registry-items .registry-item {
+    width: 100%;
+  }
+  .registry .registry-items .registry-item #macys {
+    margin-top: 3rem;
+  }
+}
+
+.registry #crate-barrel, .registry #macys {
   display: block;
+  height: 4rem;
+  width: 15rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-form {
-  margin: 4rem auto;
+.registry #crate-barrel {
+  background-image: url("../logos/GreyCrateandBarrelLogo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.modal-dialog {
-  width: 300px;
-  overflow: hidden;
+.registry #crate-barrel:active, .registry #crate-barrel:hover, .registry #crate-barrel:focus {
+  background-image: url("../logos/CrateandBarrelLogo.svg");
 }
 
-.frame {
-  width: 300px;
-  height: 580px;
-  overflow: hidden;
+.registry #macys {
+  background-image: url("../logos/GreyMacys.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-iframe {
-  margin-left: -10px;
-  margin-right: -10px;
+.registry #macys:active, .registry #macys:hover, .registry #macys:focus {
+  background-image: url("../logos/Macys.svg");
 }
 
-.btn-secondary {
+#the-rsvp {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 6rem;
+  padding: 0;
+  background-color: #373a3c;
+  background-position: fixed;
+}
+
+.round-button-circle {
+  width: 20rem;
+  height: 20rem;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background-color: transparent;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, transparent 50%, white 50%);
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease;
+}
+
+@media (max-width: 350px) {
+  .round-button-circle {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+.round-button-circle a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.round-button-circle .round-button {
+  text-decoration: none;
+  color: #fff;
   display: block;
-  margin: 0 auto 14rem;
-  min-width: 18rem;
-  min-height: 6rem;
+  border-radius: 50%;
+  width: 100%;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  line-height: 0;
+  text-align: center;
+  font-size: 5rem;
+  text-decoration: none;
+}
+
+.round-button-circle:hover {
+  color: #373a3c;
+  background-color: white;
+  background-position: -100% 100%;
+}
+
+.round-button-circle:hover .round-button {
+  color: #373a3c;
 }
 
 /*# sourceMappingURL=styles.css.map */

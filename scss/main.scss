@@ -81,15 +81,21 @@ h4 {
 .section-heading {
   text-align: center;
 }
-
+  
 
 /* BODY STYLES*/
 body {
-  background: url('../lightpaperfibers.png') ; //fixed
+  background: url('../img/lightpaperfibers.png') fixed;
+  p {
+    font-family: "Raleway", $font-family-sans-serif;
+  }
 }
 body:after{
  display:none;
- content: url("../Uber_logotype.svg") url("../Lyft_logo.svg");
+ content: url("../logos/Uber_logotype.svg") 
+          url("../logos/Lyft_logo.svg") 
+          url("../logos/CrateandBarrelLogo.svg") 
+          url("../logos/Macys.svg");
 }
 
 #main {
@@ -122,6 +128,7 @@ $test-gradient: linear-gradient(45deg, rgba(orange, $trans), rgba(purple, $trans
 #cover {
   background: #fff url('../img/TopangaCanyonCC.jpg') center center no-repeat;
   background-size: cover;
+  box-shadow: 0px 4px 3px -3px rgba(black, .5);
   color: #fff;
   text-align: center;
   display: flex;
@@ -131,10 +138,11 @@ $test-gradient: linear-gradient(45deg, rgba(orange, $trans), rgba(purple, $trans
 #cover-caption {
   width: 100%;
   padding: 1rem 1rem;
-  h1 {
-    //font-size: 4rem;
-    //font-weight: bold;
-    //text-shadow: 1px 1px 2px black;
+  @include hover-focus {
+    p {
+    }
+    h1 {
+    }
   }
 }
 
@@ -155,6 +163,9 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 .sub-head {
   margin: 6rem auto 1rem;
   max-width: $main-max;
+  &-center {
+    text-align: center;
+  }
 }
 
 .aside {
@@ -172,31 +183,45 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 
 /***** The Wedding ********/
 
+#the-wedding {
+  padding-bottom: 10rem;
+}
+
+.basics-wrapper {
+  @include make-container();
+  max-width: $main-max;
+}
+
 .the-basics {
   @include make-container();
-  border: 1px solid black;
+  border: 2px solid $gray-dark;
+  //border-radius: 50%;
   max-width: $main-max;
   margin: 4rem auto 2rem;
   padding-top: 3rem;
   padding-bottom: 2rem;
   h4, p {
     @include make-col();
+    @include make-col-span(12);
+    text-align: center;
   }
-  h4 {
-    @include make-col-span(4);
-    text-align: right;
-  }
-  p {
-    @include make-col-span(8);
-  }
+  // h4 {
+  //   @include make-col-span(4);
+  //   text-align: right;
+  // }
+  // p {
+  //   @include make-col-span(8);
+  // }
   @media (max-width: 390px) {
     h4 {
       // @include make-col-span();
-      text-align: left;
+      @include make-col-span(12);
+      text-align: center;
     }
     p {
-      @include make-col-span(10);
-      @include make-col-offset(2);
+      @include make-col-span(12);
+      text-align: center;
+      //@include make-col-offset(2);
     }
   }
 }
@@ -207,7 +232,7 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 }
 
 .info {
-  @include make-row();
+  @include make-row(1rem);
 }
 .dress {
   background-image: $test-gradient;
@@ -220,7 +245,7 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   margin: 0 auto 2rem;
   padding-bottom: 1rem;
   p {
-    @include make-container();
+    //@include make-container();
     text-align: justify;
   }
   button:focus {
@@ -228,10 +253,11 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   }
   .info {
     margin-top: 1.5rem;
-    @include make-container();
+    //@include make-container();
   }
   .details {
-    border: 1px solid black;
+    //border: 1px solid black;
+    @include make-container;
     padding-top: 1rem;
   }
 }
@@ -249,29 +275,50 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
 
 .direction-card {
   @include make-container();
-  @include make-col();
-  @include make-col-span(12);
+  @include make-col(1rem);
+  @include make-col-span(6);
   margin-bottom: 1rem;
-}
-
-.list-group {
-  border: 1px solid black;
-}
-
-button.list-group-item {
-  @include hover-focus {
-    background-color: rgba(orange, .10);
+  @media (max-width: 550px) {
+    @include make-col-span(12);
   }
 }
 
+.list-group {
+  border: 2px solid $gray-dark;
+}
+
 .list-group-item {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $gray-dark;
   background: none;
 
   h4 {
     text-align: center;
-    color: black;
+    color: $gray-dark;
     margin: 0;
+  }
+  @include hover-focus {
+    h4 {
+      color: rgba(#fff, .9);
+    }
+  }
+}
+
+button.list-group-item {
+  background-size: 200% 100%; 
+  background-image: linear-gradient(to right, transparent 50%, rgba($gray-dark, 1) 50%);
+  transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+  
+  @include hover-focus {
+    //background-color: rgba(orange, .10);
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba($gray-dark, 1);
+    background-position: -100% 100%;
+    .list-group-item {
+      color: #fff;
+      h4 {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -299,14 +346,14 @@ button.list-group-item {
 
 .hotel-wrapper {
   @include make-container();
-  padding: 0;
+  //padding: 0;
   max-width: $main-max;
   margin: 0 auto 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   p {
     @include make-container();
-    text-align: justify;
+    text-align: left;
     margin-bottom: 0;
   }
   h5 {
@@ -318,14 +365,15 @@ button.list-group-item {
       outline: none;
   }
   .stars {
-    ///text-shadow: $section-shadow;
+    //text-shadow: $section-shadow;
+    font-weight: bold;
   }
 
   .info {
     margin-top: 1.5rem;
     @media (max-width: 562px) {
       //@include make-container(0);
-      @include make-row(0.46875rem);
+      //@include make-row(0.46875rem);
     }
     @media (max-width: 374px) {
       @include make-row();
@@ -334,12 +382,12 @@ button.list-group-item {
     .hotel {
       @include make-col();
       @include make-col-span(4);
-      @media (max-width: 562px) {
-        @include make-col(0.9375rem);
+      @media (max-width: 663px) {
+        //@include make-col(0.9375rem);
         @include make-col-span(6);
         margin-top: 1.5rem;
       }
-      @media (max-width: 374px) {
+      @media (max-width: 402px) {
         @include make-col();
         @include make-col-span(12);
         margin-top: 1.5rem;
@@ -347,34 +395,30 @@ button.list-group-item {
     }
     .hotel-info {
 
-      border: 1px solid black;
+      border: 2px solid $gray-dark;
+      //background-color: rgba(black, .05);
       
       padding-top: 1rem;
       padding-bottom: 1rem;
       h5 {
-        text-align: left;
+        text-align: justify;
       }
-      @media (max-width: 709px) {
-        min-height: 12rem;
-        p {
-          text-align: left;
-        }
-      }
-      @media (max-width: 374px) {
-        min-height: 0;
-      }
-      
     }
   }
 }
 //airbnb
+.aside.media {
+  //padding-left: 0;
+}
+
 .media {
   @media (max-width: 374px) {
     text-align: left;
   }
   img {
     height: auto;
-    width: 6rem;
+    width: 3.5rem;
+    padding-top: 0;
   }
 }
 .media-body {
@@ -387,119 +431,237 @@ button.list-group-item {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  text-align: justify;
+  //text-align: justify;
 
   .info {
     padding-bottom: 1rem;
+    padding-top: 2rem;
+    @include make-row(0);
   }
 
   .car-service {
     @include make-col(0);
     @include make-col-span(6);
     @media (max-width: 550px) {
-      @include make-col(0);
+      @include make-col-span(12);
+      #uber {
+        margin-top: 3rem;
+      } 
     }
   }
 
   #lyft, #uber {
     display: block;
     height: 4rem;
-    width: 8rem;
+    width: 10rem;
     margin-left: auto;
     margin-right: auto;
   }
   #lyft {
-    background-image: url("../Grey_Lyft_logo.svg");
+    background-image: url("../logos/Grey_Lyft_logo.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     &:active,
     &:hover, 
     &:focus {
-      background-image: url("../Lyft_logo.svg");
+      background-image: url("../logos/Lyft_logo.svg");
     }
   }
   #uber {
-    background-image: url("../Grey_Uber_logotype.svg");
+    background-image: url("../logos/Grey_Uber_logotype.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     &:active, 
     &:hover, 
     &:focus {
-      background-image: url("../Uber_logotype.svg");
+      background-image: url("../logos/Uber_logotype.svg");
     }
+  }
+}
+
+.the-weekend {
+  @include make-container();
+  max-width: $main-max;
+  border: 2px solid $gray-dark;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  p {
+    @include make-container();
+    padding-right: 0;
   }
 }
 
 
 /*****    The Bride & Groom   *****/
 
+#the-couple {
+  background-color: #fff;
+  box-shadow: 0px 0px 3px 1px rgba(black, .50);
+  h1{
+    margin-bottom: 3rem;
+  }
+  .wrapper {
+    margin: 0 auto -4rem;
+    max-width: 26rem;
+  }
+}
+
+#cat-people {
+  display: block;
+  height: auto;
+  width: 100%;
+  border: .33rem solid #373a3c;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  //margin-bottom: -.70rem;
+}
+
+
+
 .the-story {
   @include make-container();
   max-width: $main-max;
-  margin-top: 1rem;
+  margin-top: -1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  h4, p {
-    @include make-col();
+
+  p {
+    @include make-container();
   }
   h4 {
-    @include make-col-span(12);
     color: rgba(black, .25);
   }
-  p {
-    @include make-col-span(11);
-    @include make-col-offset(1);
+}
+
+.registry {
+  @include make-container();
+  max-width: $main-max;
+  margin-top: 3rem;
+  margin-bottom: 16rem;
+  padding: 0;
+
+.registry-items {
+  @include make-row(0);
+  .registry-item {
+    @include make-col(0);
+    @include make-col-span(6);
+    @media (max-width: 550px) {
+      @include make-col-span(12);
+      #macys {
+        margin-top: 3rem;
+      } 
+    }
+  }
+}
+
+  #crate-barrel, #macys {
+    display: block;
+    height: 4rem;
+    width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #crate-barrel {
+    background-image: url("../logos/GreyCrateandBarrelLogo.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:active,
+    &:hover, 
+    &:focus {
+      background-image: url("../logos/CrateandBarrelLogo.svg");
+    }
+  }
+  #macys {
+    background-image: url("../logos/GreyMacys.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:active, 
+    &:hover, 
+    &:focus {
+      background-image: url("../logos/Macys.svg");
+    }
   }
 }
 
 
 // RSVP //
 
-#rsvp-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #the-rsvp {
-  // height: 100vh;
-  // width: 100vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 6rem;
+  padding: 0;
+  background-color: $gray-dark;
+  background-position: fixed;
+
 }
 
-#rsvp-frame {
-  // height: auto;
-  // width: 100%;
-  // box-sizing: content-box;
-}
+.round-button-circle {
+  width: 20rem;
+  height: 20rem;
+  @media (max-width: 350px) {
+    width: 18rem;
+    height: 18rem;
+  }
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background-color: transparent;
+  background-size: 200% 100%; 
+  background-image: linear-gradient(to right, transparent 50%, rgba(#fff, 1) 50%);
+  transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
 
-form {
-  margin: 4rem auto;
-}
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .round-button {
+    text-decoration:none;
+    color: #fff;
+    display:block;
+    border-radius: 50%;
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    line-height: 0;
+    text-align:center;
+    font-size: 5rem;
+    text-decoration:none;
+  }
 
-.modal-dialog {
-  width: 300px;
-  overflow: hidden;
+  &:hover {
+    color: $gray-dark;
+    background-color: rgba(#fff, 1);
+    background-position: -100% 100%;
+    .round-button {
+      color: $gray-dark;
+    }
+  }
 }
+// .round-button-circle:hover {
+//   color: $gray-dark;
+//   background-color: rgba(#fff, 1);
+//   background-position: -100% 100%;
+//   .round-button {
+//     color: $gray-dark;
+//   }
+// }
 
-.frame {
-  width: 300px;
-  height: 580px;
-  overflow: hidden;
-}
 
-iframe {
-  margin-left: -10px;
-  margin-right: -10px;
-}
 
-.btn-secondary {
-  display: block;
-  margin: 0 auto 14rem;
-  min-width: 18rem;
-  min-height: 6rem;
-}
+
+
+////////////////////////
+
 
 
 
