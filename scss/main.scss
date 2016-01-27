@@ -165,6 +165,7 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   max-width: $main-max;
   &-center {
     text-align: center;
+    font-family: "Raleway", $font-family-sans-serif;
   }
 }
 
@@ -331,6 +332,9 @@ button.list-group-item {
   p {
     @include make-container();
     text-align: justify;
+    margin-bottom: 1rem;
+  }
+  p:last-child{
     margin-bottom: 0;
   }
   h5 {
@@ -370,7 +374,7 @@ button.list-group-item {
   }
 
   .info {
-    margin-top: 1.5rem;
+    margin-top: 0;
     @media (max-width: 562px) {
       //@include make-container(0);
       //@include make-row(0.46875rem);

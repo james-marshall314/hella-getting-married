@@ -3243,6 +3243,7 @@ section::after {
 
 .sub-head-center {
   text-align: center;
+  font-family: "Raleway", "Hind", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .aside {
@@ -3487,13 +3488,17 @@ button.list-group-item:focus .list-group-item h4, button.list-group-item:hover .
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   text-align: justify;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .lodging p::after {
   content: "";
   display: table;
   clear: both;
+}
+
+.lodging p:last-child {
+  margin-bottom: 0;
 }
 
 .lodging h5 {
@@ -3569,7 +3574,7 @@ button.list-group-item:focus .list-group-item h4, button.list-group-item:hover .
 }
 
 .hotel-wrapper .info {
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 @media (max-width: 374px) {
