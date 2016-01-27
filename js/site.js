@@ -30,6 +30,21 @@ $('body').scrollspy({ target: '.top-nav' });
 $('button, a.nav-link.active, #uber, #lyft').mouseup(function() { this.blur() });
 $('body').on("activate.bs.scrollspy", function(){ $('a').blur() });
 
+//hide nav at rsvp
+$('body').on('activate.bs.scrollspy', function() {
+  var section = $('a.nav-link.active').attr("href");
+  console.log(section);
+  if (section === '#the-rsvp') {
+    $("#main-nav").fadeOut(300);
+  }
+  else {
+    $('.main-nav').fadeIn(300);
+  }
+});
+
+//show nav after rsvp link is clicked
+$('#RSVP').click(function(){ $('.main-nav').fadeIn(300); });
+
 // Google Maps //
 var layer = "watercolor";
 var map;
@@ -50,13 +65,16 @@ function map() {
     map: map,
     title: 'Hello World!'
   });
-//   $(window).scroll(function() {
-//     map.setOptions({ scrollwheel: false });
-//   });
 
-//   $(window).scrollEnd(function(){
-//       map.setOptions({ scrollwheel: true });
-//   }, 500);
+  // $(window).scroll(function() { 
+  //   map.setOptions({ scrollwheel: false });
+  // });
+  // $(window).scrollEnd(function(){
+  //     map.setOptions({ scrollwheel: true });
+  // }, 500);
+  
+  map.setOptions({ disableDefaultUI: false })
+  map.setOptions({ scrollwheel: false });
 }
 
 
