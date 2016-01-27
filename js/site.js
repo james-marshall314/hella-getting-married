@@ -65,10 +65,10 @@ function map() {
     map: map,
     title: 'Hello World!'
   });
+
   // $(window).scroll(function() { 
   //   map.setOptions({ scrollwheel: false });
   // });
-
   // $(window).scrollEnd(function(){
   //     map.setOptions({ scrollwheel: true });
   // }, 500);
