@@ -175,7 +175,7 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  text-align: justify;
+  //text-align: justify;
   p {
     margin: 0;
   }
@@ -247,7 +247,7 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   padding-bottom: 1rem;
   p {
     //@include make-container();
-    text-align: justify;
+    //text-align: justify;
   }
   button:focus {
       outline: none;
@@ -331,7 +331,7 @@ button.list-group-item {
   padding-bottom: 1rem;
   p {
     @include make-container();
-    text-align: justify;
+    //text-align: justify;
     margin-bottom: 1rem;
   }
   p:last-child{
@@ -405,7 +405,7 @@ button.list-group-item {
       padding-top: 1rem;
       padding-bottom: 1rem;
       h5 {
-        text-align: justify;
+        //text-align: justify;
       }
     }
   }

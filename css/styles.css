@@ -3255,7 +3255,6 @@ section::after {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  text-align: justify;
 }
 
 .aside::after {
@@ -3361,10 +3360,6 @@ section::after {
   content: "";
   display: table;
   clear: both;
-}
-
-.directions p {
-  text-align: justify;
 }
 
 .directions button:focus {
@@ -3487,7 +3482,6 @@ button.list-group-item:focus .list-group-item h4, button.list-group-item:hover .
   margin-right: auto;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  text-align: justify;
   margin-bottom: 1rem;
 }
 
@@ -3621,10 +3615,6 @@ button.list-group-item:focus .list-group-item h4, button.list-group-item:hover .
   border: 2px solid #373a3c;
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.hotel-wrapper .info .hotel-info h5 {
-  text-align: justify;
 }
 
 @media (max-width: 374px) {
