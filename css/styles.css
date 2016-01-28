@@ -3253,8 +3253,8 @@ section::after {
   padding: 1rem 1rem;
 }
 
-#cover-caption:focus b, #cover-caption:hover b {
-  color: rgba(255, 140, 0, 0.75);
+#cover-caption:focus h1, #cover-caption:hover h1 {
+  text-shadow: 0px -1px #373a3c, 0px -2px #373a3c, 0px -3px #373a3c, 0px -4px #373a3c;
 }
 
 .cover-link:hover, .cover-link:focus {
