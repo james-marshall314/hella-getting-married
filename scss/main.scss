@@ -290,7 +290,8 @@ $section-shadow: 1px 1px 3px rgba(black, .5);
   @include make-row(1rem);
 }
 .dress {
-  background-image: $test-gradient;
+  border: 2px solid $gray-dark;
+  //background-image: $test-gradient;
 }
 
 .directions {

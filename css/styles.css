@@ -3403,7 +3403,7 @@ section::after {
 }
 
 .dress {
-  background-image: linear-gradient(45deg, rgba(255, 140, 0, 0.15), rgba(75, 0, 130, 0.15));
+  border: 2px solid #373a3c;
 }
 
 .directions {
