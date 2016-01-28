@@ -3191,12 +3191,6 @@ h4 {
 }
 
 /* BODY STYLES*/
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
   background: url("../img/lightpaperfibers.png") fixed;
 }
@@ -3251,10 +3245,6 @@ section::after {
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   padding: 1rem 1rem;
-}
-
-#cover-caption:focus h1, #cover-caption:hover h1 {
-  text-shadow: 0px -1px #373a3c, 0px -2px #373a3c, 0px -3px #373a3c, 0px -4px #373a3c;
 }
 
 .cover-link:hover, .cover-link:focus {
@@ -3374,7 +3364,7 @@ section::after {
   margin: 2rem auto 2rem;
   padding-top: 3rem;
   padding-bottom: 2rem;
-  background-image: url("../img/25%.png");
+  background-image: url("../img/25.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
