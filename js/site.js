@@ -14,7 +14,7 @@ $.fn.scrollEnd = function(callback, timeout) {
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    $('a.page-scroll, a.nav-link').bind('click', function(event) {
+    $('a.page-scroll, a.nav-link, a.section-link').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
@@ -39,8 +39,15 @@ $('body').on('activate.bs.scrollspy', function() {
   }
   else {
     $('.main-nav').fadeIn(300);
+    // $('#cover').hide(); 
+    //$('html,body').scrollTop(0);
   }
 });
+
+// $('#cover').click(function(){ 
+//   $('#cover').fadeOut(); 
+//   $(window).scrollTop();
+// });
 
 //show nav after rsvp link is clicked
 $('#RSVP').click(function(){ $('.main-nav').fadeIn(300); });

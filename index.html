@@ -44,23 +44,36 @@
     
     <section id="the-wedding">
       <h1 class="section-heading">The Wedding</h1>
-      <!-- <div class="section-links">
-        <div class="info">
+      <div class="section-links">
+        <div class="section-links-wrapper">
           <div class="section-link-wrapper">
-            <a href="">Directions</a>
+            <a class="section-link" href="#directions">
+              <svg class="icon icon-map"><use xlink:href="icons/symbol-defs.svg#icon-map"></use>
+              <h4>Directions</h4>
+            </a>
           </div>
           <div class="section-link-wrapper">
-            <a href="">Lodging</a>
+            <a class="section-link" href="#lodging">
+              <svg class="icon icon-hotel"><use xlink:href="icons.symbol-defs.svg#icon-bed"></use>
+              <h4>Lodging</h4>
+            </a>
           </div>
           <div class="section-link-wrapper">
-            <a href="">Transportation</a>
+            <a class="section-link" href="#transportation">
+              <svg class="icon icon-cab"><use xlink:href="icons/symbol-defs.svg#icon-cab"></use>
+              <h4>Transportation</h4>
+            </a>
           </div>
           <div class="section-link-wrapper">
-            <a href="">Weekend Schedule</a>
+            <a class="section-link" href="#weekend-schedule">
+              <svg class="icon icon-calendar"><use xlink:href="icons/symbol-defs.svg#icon-calendar"></use>
+              <h4>Weekend Schedule</h4>
+            </a>
           </div>
         </div>
-      </div> -->
-      <!-- <h2>The Basics</h2> -->
+      </div>
+      
+      <!-- <h2 class="sub-head" >The Basics</h2> -->
       <div class="basics-wrapper">
         <div class="the-basics">
           <div class="info-wrapper">
@@ -105,7 +118,8 @@
         </div>
       </div>
 
-      <h2 class="sub-head">Directions</h2>
+
+      <h2 class="sub-head" id="directions">Directions</h2>
 
       <div class="directions">
         
@@ -151,7 +165,7 @@
 
       </div>
 
-      <h2 class="sub-head">Where To Stay</h2>
+      <h2 class="sub-head" id="lodging">Where To Stay</h2>
       <div class="lodging">
         <p>
           We will be providing shuttle drop-off service to the hotels below on the night of the wedding. We would recommend staying at one of these options (all near each other), but feel free to hoe your own row, as it were. There are quite a few other choices in Woodland Hills, the neighborhood at the base of the canyon.
@@ -215,7 +229,7 @@
         </div>
       </div> -->
       
-      <h2 class="sub-head">Getting Around</h2>
+      <h2 class="sub-head" id="transportation">Getting Around</h2>
       <div class="transportation">
         <div>
           <p>
@@ -237,7 +251,7 @@
         </div>
       </div>
 
-      <h2 class="sub-head">Weekend Schedule</h2>
+      <h2 class="sub-head" id="weekend-schedule">Weekend Schedule</h2>
       <div class="basics-wrapper">
         <div class="the-weekend info">
           <h4>Friday</h4>
@@ -315,6 +329,8 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/site.js"></script>
+    <!-- svg icon pollyfill -->
+    <script src="svgxuse.min.js"></script>
     
     <!-- map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5-G-RmYTW_3yHHYtc3_knAotqx2Aq-vE"></script>
