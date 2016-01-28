@@ -3087,6 +3087,7 @@ a.bg-danger:focus, a.bg-danger:hover {
 .main-nav {
   background: #fff;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1.12rem;
   padding: 1rem 1rem;
   width: 100%;
   margin-bottom: -6rem;
@@ -3135,7 +3136,7 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 
 .main-nav .nav-link {
-  color: #888;
+  color: #373a3c;
 }
 
 .main-nav .nav-link:focus, .main-nav .nav-link:hover {
@@ -3190,6 +3191,12 @@ h4 {
 }
 
 /* BODY STYLES*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background: url("../img/lightpaperfibers.png") fixed;
 }
@@ -3233,7 +3240,7 @@ section::after {
   background: #fff url("../img/TopangaCanyonCC.jpg") center center no-repeat;
   background-size: cover;
   box-shadow: 0px 4px 3px -3px rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #373a3c;
   text-align: center;
   display: flex;
   align-items: center;
@@ -3241,8 +3248,13 @@ section::after {
 }
 
 #cover-caption {
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   padding: 1rem 1rem;
+}
+
+#cover-caption:focus b, #cover-caption:hover b {
+  color: rgba(255, 140, 0, 0.75);
 }
 
 .cover-link:hover, .cover-link:focus {
@@ -3674,6 +3686,10 @@ button.list-group-item:focus .list-group-item h4, button.list-group-item:hover .
   border: 2px solid #373a3c;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.hotel-wrapper .info .hotel-info h5 {
+  text-align: left;
 }
 
 @media (max-width: 374px) {
