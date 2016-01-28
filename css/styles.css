@@ -3085,7 +3085,7 @@ a.bg-danger:focus, a.bg-danger:hover {
  *    Married!
  */
 .main-nav {
-  background: #fff;
+  background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   font-size: 1.12rem;
   padding: 1rem 1rem;
@@ -3286,7 +3286,7 @@ section::after {
 
 /***** The Wedding ********/
 #the-wedding {
-  padding-bottom: 10rem;
+  padding-bottom: 4rem;
 }
 
 .section-links {
@@ -3809,11 +3809,6 @@ button.list-group-item:focus .list-group-item h4, button.list-group-item:hover .
 }
 
 /*****    The Bride & Groom   *****/
-#the-couple {
-  background-color: #fff;
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
-}
-
 #the-couple h1 {
   margin-bottom: 3rem;
 }
