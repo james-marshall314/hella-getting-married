@@ -1,0 +1,156 @@
+.wedding-party {
+  @include make-container();
+  max-width: $main-max;
+  margin-top: 3rem;
+  padding: 0;
+  .registry-items {
+    @include make-row(0);
+    .registry-item {
+      @include make-col(0);
+      @include make-col-span(6);
+      @media (max-width: 550px) {
+        @include make-col-span(12);
+      }
+    }
+  }
+}
+
+button:focus {
+    outline: none;
+  }
+
+.hgm-button {
+  border: 2px solid darkorange;
+  border-radius: 50%;
+  display: block;
+  background: none;
+  height: 16rem;
+  width: 16rem;
+  box-shadow: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  h4 {
+    text-align: center;
+    color: darkorange;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  @include hover-focus {
+    h4 {
+      color: rgba(#fff, .9);
+    }
+  }
+  background-size: 200% 100%; 
+  background-image: linear-gradient(to right, transparent 50%, rgba(darkorange, 1) 50%);
+  transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+  
+  @include hover-focus {
+    //background-color: rgba(orange, .10);
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(darkorange, 1);
+    background-position: -100% 100%;
+    .list-group-item {
+      color: #fff;
+      h4 {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.halfyhalf {
+  @include make-col();
+  @include make-col-span(6);
+}
+
+.bio-heading {
+  @include make-row();
+  margin-bottom: 1rem();
+  //max-width: 20rem();
+  //float: left;
+}
+
+.bio {
+  @include make-container();
+  max-width: $main-max;
+  margin-top: 1rem;
+
+  .title-wrapper{
+    //max-width: 10rem;
+  }
+  .headshot-wrapper {
+    max-width: 14rem;
+    margin-left: auto;
+  }
+  .modal-header {
+    margin-bottom: 1rem;
+  }
+  h1{
+    margin: 1rem 0 0 0;
+    @media (max-width: 375px) {
+      font-size: 1.75rem;
+      margin: 0rem 0 0 0;
+    }
+  }
+  h2{
+    font-size: 1.5rem;
+    margin: 1rem 0 0 0;
+    @media (max-width: 375px) {
+      font-size: 1rem;
+      margin: .5rem 0 0 0;
+    }
+  }
+  img {
+    @include img-fluid();
+    min-height: 6rem;
+    margin-left: auto;
+    border-radius: 50%;
+    border: 2px solid $gray-dark;
+  }
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .long-last {
+    margin-top: 0;
+    font-size: 2.5rem;
+    @media (max-width: 534px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 375px) {
+      font-size: 1.20rem;
+    }
+  }
+}
+.hgm-modal-header, .hgm-modal-footer {
+  height: 3.5rem;
+}
+.close-button {
+  float: right;
+  margin: 1rem;
+  text-decoration: none;
+  color: darkorange;
+  @include hover-focus {
+    text-decoration: none;
+    color: $gray-dark;
+  }
+  &.active,
+  &:active, {
+    color: darkorange;
+    text-decoration: none;
+  }
+}
+.close-button.active {
+  color: darkorange;
+  text-decoration: none;
+  @include plain-hover-focus {
+    color: darkorange;
+    text-decoration: none;
+  }
+  @include hover-focus {
+    color: darkorange;
+    text-decoration: none;
+  }
+}
+
